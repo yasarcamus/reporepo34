@@ -108,13 +108,14 @@ function Navbar() {
 
           <div className="flex items-center gap-3">
             <LanguageSwitcher />
-            <motion.button
+            <motion.a
+              href="/login"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="px-4 py-2 border-2 border-teal-600 text-teal-600 rounded-full font-semibold hover:bg-teal-50 transition-colors text-sm hidden sm:block"
             >
               {t.nav.partnerLogin}
-            </motion.button>
+            </motion.a>
           </div>
         </div>
       </div>
