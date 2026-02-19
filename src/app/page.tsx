@@ -1,15 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { 
-  Wifi, 
-  Zap, 
-  Shield, 
-  Smartphone, 
-  Check, 
+import {
+  Wifi,
+  Zap,
+  Shield,
+  Smartphone,
+  Check,
   ArrowRight,
   Sun,
-  MapPin,
   Phone,
   Mail,
   Globe
@@ -51,15 +50,14 @@ function LanguageSwitcher() {
         <Globe className="w-4 h-4" />
         <span className="hidden sm:inline">{languages.find(l => l.code === language)?.flag}</span>
       </motion.button>
-      
+
       <div className="absolute top-full right-0 mt-2 w-40 bg-white rounded-xl shadow-lg border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 overflow-hidden">
         {languages.map((lang) => (
           <button
             key={lang.code}
             onClick={() => setLanguage(lang.code)}
-            className={`w-full px-4 py-2.5 text-left text-sm hover:bg-slate-50 flex items-center gap-2 transition-colors ${
-              language === lang.code ? "bg-teal-50 text-teal-600 font-medium" : "text-slate-700"
-            }`}
+            className={`w-full px-4 py-2.5 text-left text-sm hover:bg-slate-50 flex items-center gap-2 transition-colors ${language === lang.code ? "bg-teal-50 text-teal-600 font-medium" : "text-slate-700"
+              }`}
           >
             <span>{lang.flag}</span>
             <span>{lang.label}</span>
@@ -74,7 +72,7 @@ function Navbar() {
   const { t } = useLanguage();
 
   return (
-    <motion.nav 
+    <motion.nav
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -82,7 +80,7 @@ function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <motion.div 
+          <motion.div
             className="flex items-center gap-2"
             whileHover={{ scale: 1.02 }}
           >
@@ -93,7 +91,7 @@ function Navbar() {
               TouristNetTR
             </span>
           </motion.div>
-          
+
           <div className="hidden md:flex items-center gap-8">
             <a href="#packages" className="text-slate-600 hover:text-teal-600 transition-colors font-medium">
               {t.nav.packages}
@@ -106,15 +104,15 @@ function Navbar() {
             </a>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <LanguageSwitcher />
             <motion.a
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
               href="https://partner.touristnettr.com/login"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 border-2 border-teal-600 text-teal-600 rounded-full font-semibold hover:bg-teal-50 transition-colors text-sm hidden sm:block"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="px-2.5 sm:px-4 py-2 border-2 border-teal-600 text-teal-600 rounded-full font-semibold hover:bg-teal-50 transition-colors text-[11px] sm:text-sm whitespace-nowrap"
             >
               {t.nav.partnerLogin}
             </motion.a>
@@ -135,9 +133,9 @@ function Hero() {
         <div className="absolute bottom-20 left-10 w-96 h-96 bg-cyan-200 rounded-full blur-3xl opacity-30 animate-float" style={{ animationDelay: "2s" }} />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-teal-100 to-cyan-100 rounded-full blur-3xl opacity-50" />
       </div>
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div 
+        <motion.div
           className="text-center max-w-4xl mx-auto"
           variants={staggerContainer}
           initial="initial"
@@ -147,21 +145,21 @@ function Hero() {
             <Sun className="w-4 h-4 text-orange-500" />
             <span className="text-teal-700 font-medium text-sm">{t.hero.badge}</span>
           </motion.div>
-          
-          <motion.h1 
+
+          <motion.h1
             variants={fadeInUp}
             className="text-4xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6 leading-tight"
           >
             {t.hero.title}
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             variants={fadeInUp}
             className="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto"
           >
             {t.hero.subtitle}
           </motion.p>
-          
+
           <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.button
               whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(20, 184, 166, 0.3)" }}
@@ -179,7 +177,7 @@ function Hero() {
             </motion.button>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             variants={fadeInUp}
             className="mt-12 flex items-center justify-center gap-8 text-slate-500 flex-wrap"
           >
@@ -202,7 +200,7 @@ function Features() {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -247,7 +245,7 @@ function Pricing() {
   return (
     <section id="packages" className="py-20 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -271,24 +269,23 @@ function Pricing() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
               whileHover={{ y: -10, transition: { duration: 0.3 } }}
-              className={`relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all ${
-                index === 1 ? 'ring-2 ring-teal-500 scale-105 md:scale-110' : 'border border-slate-100'
-              }`}
+              className={`relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all ${index === 1 ? 'ring-2 ring-teal-500 scale-105 md:scale-110' : 'border border-slate-100'
+                }`}
             >
               {index === 1 && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-teal-500 to-cyan-600 text-white text-sm font-bold rounded-full animate-pulse-glow">
                   {t.pricing.popular}
                 </div>
               )}
-              
+
               <div className="p-8">
                 <h3 className="text-2xl font-bold text-slate-900 mb-2">{pkg.name}</h3>
                 <p className="text-slate-500 text-sm mb-4">{pkg.description}</p>
-                
+
                 <div className="mb-6">
                   <span className="text-4xl font-bold text-slate-900">{pkg.price}</span>
                 </div>
-                
+
                 <ul className="space-y-3 mb-8">
                   {pkg.features.map((feature, i) => (
                     <li key={i} className="flex items-center gap-3 text-slate-600">
@@ -297,15 +294,14 @@ function Pricing() {
                     </li>
                   ))}
                 </ul>
-                
+
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className={`w-full py-4 rounded-xl font-bold transition-all ${
-                    index === 1 
-                      ? 'bg-gradient-to-r from-teal-500 to-cyan-600 text-white hover:shadow-lg hover:shadow-teal-500/30' 
+                  className={`w-full py-4 rounded-xl font-bold transition-all ${index === 1
+                      ? 'bg-gradient-to-r from-teal-500 to-cyan-600 text-white hover:shadow-lg hover:shadow-teal-500/30'
                       : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
-                  }`}
+                    }`}
                 >
                   {t.pricing.select}
                 </motion.button>
@@ -324,7 +320,7 @@ function HowItWorks() {
   return (
     <section id="how-it-works" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -354,7 +350,7 @@ function HowItWorks() {
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-2">{step.title}</h3>
               <p className="text-slate-600 text-center max-w-xs">{step.description}</p>
-              
+
               {index < t.howItWorks.steps.length - 1 && (
                 <div className="hidden md:block w-24 h-0.5 bg-gradient-to-r from-teal-300 to-cyan-300 mt-8" />
               )}
@@ -372,7 +368,7 @@ function B2BSection() {
   return (
     <section className="py-20 bg-gradient-to-br from-teal-50 via-cyan-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
+        <motion.div
           className="bg-white rounded-3xl p-8 md:p-12 shadow-xl"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -388,11 +384,11 @@ function B2BSection() {
                 {t.b2b.description}
               </p>
               <motion.a
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
                 href="https://wa.me/905514858742"
                 target="_blank"
                 rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-rose-500 text-white rounded-full font-bold hover:shadow-lg hover:shadow-orange-500/30 transition-all"
               >
                 <Phone className="w-5 h-5" />
@@ -400,11 +396,11 @@ function B2BSection() {
                 <ArrowRight className="w-5 h-5" />
               </motion.a>
             </div>
-            
+
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-2xl transform rotate-3" />
               <div className="relative bg-gradient-to-br from-teal-500 to-cyan-600 rounded-2xl p-8 text-white">
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-3 gap-4 sm:gap-6">
                   {t.b2b.stats.map((stat, index) => (
                     <div key={index} className="text-center">
                       <div className="text-3xl font-bold mb-1">{stat.value}</div>
@@ -439,7 +435,7 @@ function Footer() {
               {t.footer.description}
             </p>
           </div>
-          
+
           <div>
             <h4 className="text-white font-semibold mb-4">{t.footer.quickLinks}</h4>
             <ul className="space-y-2 text-sm">
@@ -449,14 +445,10 @@ function Footer() {
               <li><a href="#" className="hover:text-teal-400 transition-colors">{t.footer.contact}</a></li>
             </ul>
           </div>
-          
+
           <div>
             <h4 className="text-white font-semibold mb-4">{t.footer.contact}</h4>
             <ul className="space-y-3 text-sm">
-              <li className="flex items-center gap-2">
-                <MapPin className="w-4 h-4" />
-                <span>{t.footer.address}</span>
-              </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
                 <span>{t.footer.phone}</span>
@@ -468,7 +460,7 @@ function Footer() {
             </ul>
           </div>
         </div>
-        
+
         <div className="border-t border-slate-800 pt-8 text-center text-sm">
           <p>&copy; 2026 TouristNetTR. {t.footer.copyright}</p>
         </div>
